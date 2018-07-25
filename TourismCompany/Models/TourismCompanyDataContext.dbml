@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TourismCompany" Class="TourismCompanydbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=TourismCompany;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TourismCompanyConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Trips" Member="Trips">
+    <Type Name="Trip">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartureDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfNights" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BestPlaces" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="NChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Trip_Users_Trip" Member="Users_Trips" ThisKey="Id" OtherKey="TripId" Type="Users_Trip" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Users_Trip" Member="Users_Trips" ThisKey="Id" OtherKey="UserId" Type="Users_Trip" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users_Trips" Member="Users_Trips">
+    <Type Name="Users_Trip">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TripId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Trip_Users_Trip" Member="Trip" ThisKey="TripId" OtherKey="Id" Type="Trip" IsForeignKey="true" />
+      <Association Name="User_Users_Trip" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

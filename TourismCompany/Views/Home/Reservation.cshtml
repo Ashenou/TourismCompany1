@@ -1,0 +1,47 @@
+﻿@model TourismCompany.Models.User
+
+@{
+    ViewBag.Title = "Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reservation</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User</legend>
+
+        <div class="editor-label">
+            @Html.Label("National ID Number")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Number of Persons")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div>
+        @Html.DropDownListFor(model => model.Id, (SelectList)ViewBag.TripsList, "Select Trip")
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

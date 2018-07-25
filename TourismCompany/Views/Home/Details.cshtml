@@ -1,0 +1,68 @@
+﻿@model TourismCompany.Models.Trip
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Trip</legend>
+
+    <div class="display-label">
+        @*@Html.DisplayNameFor(model => model.Image)*@
+
+        <img src=@Url.Content(Model.Image) width="200" height="200" style="float:right" />
+    </div>
+    <div class="display-label">
+        <h3>@Html.DisplayNameFor(model => model.Name)</h3> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         <h3>@Html.DisplayNameFor(model => model.DepartureDate)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DepartureDate)
+    </div>
+
+    <div class="display-label">
+        <h3>@Html.DisplayNameFor(model => model.Price)</h3> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+        <h3>@Html.DisplayNameFor(model => model.NumberOfNights)</h3> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberOfNights)
+    </div>
+
+    <div class="display-label">
+         <h3>@Html.DisplayNameFor(model => model.BestPlaces)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BestPlaces)
+    </div>
+
+    <div class="display-label">
+         <h3>@Html.DisplayNameFor(model => model.Details)</h3>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Details)
+    </div>
+
+   
+    @*<div class="display-field">
+        @Html.DisplayFor(model => model.Image)
+    </div>*@
+</fieldset>
+<p>
+    <h2 style=" color:#0094ff">@Html.ActionLink("For Reservations Click here","Reservation")</h2>
+    @Html.ActionLink("Back to List", "Index")
+</p>

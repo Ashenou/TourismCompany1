@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    @using TourismCompany.Models
+    @model IEnumerable<TourismCompany.Models.Trip>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <class class="title">
+                <table>
+                    <tr>
+                    @foreach (Trip item in Model)
+                    {
+                    <td><h1> @Html.ActionLink(item.Name, "Details", "Home", new { id = item.Id }, null)</h1></td>
+                    }
+                    
+                    </tr>
+
+                </table>
+            </class>
+        </div>
+    </section>
+}
+
+
+<h3>Users Reviews</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Diana P</h5>
+        I came here with a friend as backpackers, I must admit it's expensive but it's worth it. The view is completely amazing and if you go there by 6:20 you'll see the sunrise! A must go!
+    </li>
+
+    <li class="two">
+        <h5>jeanne</h5>
+        It's one of the 7 New Wonders of the World. For good reason. Take the train from Ollantaytambo to Aguas Calientes, now officially named Machu Picchu Pueblo. Here I highly suggest you secure a guide or join a guided tour. Peru Sightseeing had an excellent guide and service. Then take a bus towards the UNESCO World Heritage Site and bring your walking stick out because it's quite a bit of a climb. After the tour, take an extra hour to go see the Inca Bridge or if you have 2 hours more, the Sun Gate. Happy trails!
+        Visited June 2016
+    </li>
+
+    <li class="three">
+        <h5>Bulife</h5>
+        I have to saw we were deeply disappointed in what we were hoping would be an awe-inspiring experience. After traveling by plane,train,zodiac,automobile and tuk tuk to get there we were greeted by line after line for everything from train tickets to bathrooms ( which there's one and outside the site) to entry. Then narcissists desecrated the day with what should've been a jaw dropping experience.
+        They are laying on everything taking pictures of themselves in every conceivable pose. Frankly, the archeological society and UNESCO should ban them.
+        If you're planning on climbing Waynapicchu be prepared. You need fitness and the climb down is harder than the ascent. If your obese, do everybody a favor and lose the weight now or don't go!
+        There's a "crevice" you'll need to be able to squeeze through to make your way down. I'm 6' 175# and it was tight for me.
+        If you do make it it's well worth the effort mainly because that's where you'll find the least people.
+    </li>
+
+    
+</ol>

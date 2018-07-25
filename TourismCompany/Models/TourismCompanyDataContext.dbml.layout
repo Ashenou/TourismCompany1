@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TourismCompanydb">
+  <DataContextMoniker Name="/TourismCompanydbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="de7485e7-17dd-4b28-9bc3-76dfe083943f" absoluteBounds="0.75, 4.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/TourismCompanydbDataContext/Trip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="32fb3c8b-1138-4480-b834-71db0ae23913" absoluteBounds="0.765, 5.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e960d2c7-27b5-430c-a510-902d08c9c3e5" absoluteBounds="0.75, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/TourismCompanydbDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa6f2e02-0f43-4261-aeb0-f2b52d7f68c9" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22e9a658-d914-458b-b1bd-1054b6652db4" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/TourismCompanydbDataContext/Users_Trip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77b9e940-9045-4639-bf7e-24793c635573" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.79890055338542); (4.5 : 5.79890055338542); (4.5 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TourismCompanydbDataContext/Trip/Trip_Users_Trip" />
+      <nodes>
+        <classShapeMoniker Id="de7485e7-17dd-4b28-9bc3-76dfe083943f" />
+        <classShapeMoniker Id="22e9a658-d914-458b-b1bd-1054b6652db4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.56814697265625); (3.5 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TourismCompanydbDataContext/User/User_Users_Trip" />
+      <nodes>
+        <classShapeMoniker Id="e960d2c7-27b5-430c-a510-902d08c9c3e5" />
+        <classShapeMoniker Id="22e9a658-d914-458b-b1bd-1054b6652db4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
